@@ -11,7 +11,7 @@ class View {
   }
 
   public function render($data = []) {
-    //extract($data);
+    extract($data);
 
     if (!is_file($this->filePath)) {
       throw new \Exception("View file not found: " . $this->filePath);
@@ -22,6 +22,12 @@ class View {
     $offset = mb_stripos($this->content, '@extends');
     
     if (!(is_null($offset))) $this->wrapContent($offset);
+
+    foreach ($data as $key => $value) {
+      $placeholder = '{{ $' . $key . ' }}';
+      //if (strpos($key, '->')){}
+      $this->content = str_replace($placeholder, $value, $this->content);
+    }
 
     echo $this->content;
   }

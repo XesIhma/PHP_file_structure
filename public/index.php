@@ -6,10 +6,15 @@ require_once realpath("../vendor/autoload.php");
 
 $homeView = new View("home");
 
+$data = array(
+  "name" => "Horld"
+);
+
+
 
 
 try {
-  $homeView->render();
+  $homeView->render($data);
 }catch (Exception $e) {
   echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
