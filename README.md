@@ -12,6 +12,7 @@ View Class provides very basic rendering logic.
 
 If file contains @content then it may be taken to wrap content of another file which has '@extends( file )' statement in it. 
 I.e. 
+```
  app.html
  <html>
   <head> ... </head>
@@ -23,11 +24,13 @@ I.e.
  file.html
  @extends( app )
  <p>Helo World</p>
+ ```
  
-It will render '<p>Helo World</p>' in place of '@content'. 
+It will render ```<p>Helo World</p>``` in place of '@content'. 
 
 Also any data passed as associative array to render() method will replace variables in {{ $var }} found in html file.
 I.e.
+```
   index.php
   // ... 
   $data = array(
@@ -37,4 +40,5 @@ I.e.
   
   file.html
   <p>Hello {{ $name }}</p>
+  ```
 
