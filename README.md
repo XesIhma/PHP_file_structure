@@ -41,4 +41,10 @@ I.e.
   file.html
   <p>Hello {{ $name }}</p>
   ```
+  
+### CREATING CUSTOM RENDERING METHODS ###
+It wasn't my intention to create new php framework, rather just configured directory for quict start. If you want to have elements as @foreach or @yield('text') you can copy
+line with ```$offset = mb_stripos``` and add your own logic.
 
+### DATABASE ###
+to be done
