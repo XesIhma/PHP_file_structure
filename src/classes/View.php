@@ -20,7 +20,6 @@ class View {
     $this->content = file_get_contents($this->filePath);
     
     $offset = mb_stripos($this->content, '@extends');
-    
     if (!(is_null($offset))) $this->wrapContent($offset);
 
     foreach ($data as $key => $value) {
